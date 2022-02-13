@@ -16,9 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from places.views import index
+from places.views import get_place_by_id, index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index)
+    path('', index),
+    path('places/<int:place_id>/', get_place_by_id),
 ]
